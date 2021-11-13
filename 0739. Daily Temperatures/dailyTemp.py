@@ -80,20 +80,47 @@ if __name__ == '__main__':
 
 
 
-    time_start = time.time()
-    solution.dailyTemperatures2(test)
-    print(time.time() - time_start)
-
-    time_start = time.time()
-    solution.dailyTemperatures3(test)
-    print(time.time() - time_start)
-
     # time_start = time.time()
-    # for x in test[::-1]:
-    #     pass
+    # solution.dailyTemperatures2(test)
     # print(time.time() - time_start)
     #
     # time_start = time.time()
-    # while test:
-    #     test.pop()
+    # solution.dailyTemperatures3(test)
     # print(time.time() - time_start)
+
+    # N = 10000
+    # total = 0
+    # for i in range(N):
+    #     time_start = time.time()
+    #     for x in test[::-1]:
+    #         pass
+    #     total += time.time() - time_start
+    # print(total / N)
+    #
+    # total = 0
+    # for i in range(N):
+    #     temp = test
+    #     time_start = time.time()
+    #     while temp:
+    #         temp.pop()
+    #     total += time.time() - time_start
+    # print(total / N)
+
+
+    # N = 10000
+    # total = 0
+    # for i in range(N):
+    #     time_start = time.time()
+    #     for i in range(len(test), 0, -1):
+    #         pass
+    #     total += time.time() - time_start
+    # print(total / N)
+    #
+    # N = 10000
+    # total = 0
+    # for i in range(N):
+    #     time_start = time.time()
+    #     for i in reversed(range(len(test))):
+    #         pass
+    #     total += time.time() - time_start
+    # print(total / N)
