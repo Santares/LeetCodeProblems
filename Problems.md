@@ -37,6 +37,8 @@ use stack to find next/previous larger/smaller number
   + use **hash map**
 + 901 https://leetcode.com/problems/online-stock-span/
   + use stack, **pop unneeded ones**
++ 503 https://leetcode.com/problems/next-greater-element-ii/
+  +  double the length
 
 
 
