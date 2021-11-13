@@ -39,6 +39,7 @@ use stack to find next/previous larger/smaller number
   + use stack, **pop unneeded ones**
 + 503 https://leetcode.com/problems/next-greater-element-ii/
   +  double the length
++ 556 https://leetcode.com/problems/next-greater-element-iii/submissions
 
 
 
