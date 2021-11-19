@@ -10,6 +10,7 @@
 | 739            | Daily Temperatures              | Medium     | https://leetcode.com/problems/daily-temperatures/            | Time Limit |
 | 11             | Container With Most Water       | Medium     | https://leetcode.com/problems/container-with-most-water/     | Wrong      |
 | 368            | Largest Divisible Subset        | Medium     | https://leetcode.com/problems/largest-divisible-subset/      | Time Limit |
+| 41             | First Missing Positive          | Hard       | https://leetcode.com/problems/first-missing-positive/        | Not O(n)   |
 
 
 
@@ -59,4 +60,21 @@ think too much
 
 
 #### 368
+
+
+
+
+
+
+
+#### 41
+
+not O(n) or space not O(1)
+
+**sample solution:** 
+
+- https://leetcode.com/problems/first-missing-positive/discuss/17080/Python-O(1)-space-O(n)-time-solution-with-explanation
+- https://leetcode.com/problems/first-missing-positive/discuss/17071/My-short-c%2B%2B-solution-O(1)-space-and-O(n)-time
+
+
 
