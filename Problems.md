@@ -11,6 +11,7 @@
 | 11             | Container With Most Water       | Medium     | https://leetcode.com/problems/container-with-most-water/     | Wrong      |
 | 368            | Largest Divisible Subset        | Medium     | https://leetcode.com/problems/largest-divisible-subset/      | Time Limit |
 | 41             | First Missing Positive          | Hard       | https://leetcode.com/problems/first-missing-positive/        | Not O(n)   |
+| 407            | Trapping Rain Water II          | Hard       | https://leetcode.com/problems/trapping-rain-water-ii/        | Time Limit |
 
 
 
@@ -55,7 +56,7 @@ think too much
 **similar problems:**
 
 * 42 https://leetcode.com/problems/trapping-rain-water/
-  * 
+  * from two side
 
 
 
@@ -78,3 +79,12 @@ not O(n) or space not O(1)
 
 
 
+#### 407
+
+Min heap + BFS
+
+search from outer layer, using minimal one first
+
+**sample solution:** 
+
+* https://leetcode.com/problems/trapping-rain-water-ii/discuss/89466/python-solution-with-heap
