@@ -131,9 +131,10 @@ Use recursion to do left and right substree
 
 **sample solution:** 
 
-* 1
+* https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/discuss/1588934/C%2B%2B-EASY-Intuitive-Sol-or-Clean-Recursive-Code-w-Explanation-(Dry-Run)-or-T.C%3AO(N)
 
 **similar problems:**
 
 * 105 https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+  * similar
 
