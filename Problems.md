@@ -1,18 +1,19 @@
 # Problems
 
-| Problem Number | Problem Name                    | Difficulty | Link                                                         | Notes      |
-| -------------- | ------------------------------- | ---------- | ------------------------------------------------------------ | ---------- |
-| 5              | Longest Palindromic Substring   | Medium     | https://leetcode.com/problems/longest-palindromic-substring/ |            |
-| 127            | Word Ladder                     | Hard       | https://leetcode.com/problems/word-ladder/                   | Time Limit |
-| 96             | Unique Binary Search Trees      | Medium     | https://leetcode.com/problems/unique-binary-search-trees/    |            |
-| 121            | Best Time to Buy and Sell Stock | Easy       | https://leetcode.com/problems/best-time-to-buy-and-sell-stock/ |            |
-| 10             | Regular Expression Matching     | Hard       | https://leetcode.com/problems/regular-expression-matching/   |            |
-| 739            | Daily Temperatures              | Medium     | https://leetcode.com/problems/daily-temperatures/            | Time Limit |
-| 11             | Container With Most Water       | Medium     | https://leetcode.com/problems/container-with-most-water/     | Wrong      |
-| 368            | Largest Divisible Subset        | Medium     | https://leetcode.com/problems/largest-divisible-subset/      | Time Limit |
-| 41             | First Missing Positive          | Hard       | https://leetcode.com/problems/first-missing-positive/        | Not O(n)   |
-| 407            | Trapping Rain Water II          | Hard       | https://leetcode.com/problems/trapping-rain-water-ii/        | Time Limit |
-| 84             | Largest Rectangle in Histogram  | Hard       | https://leetcode.com/problems/largest-rectangle-in-histogram/ | Time Limit |
+| Problem Number | Problem Name                                               | Difficulty | Link                                                         | Notes            |
+| -------------- | ---------------------------------------------------------- | ---------- | ------------------------------------------------------------ | ---------------- |
+| 5              | Longest Palindromic Substring                              | Medium     | https://leetcode.com/problems/longest-palindromic-substring/ |                  |
+| 127            | Word Ladder                                                | Hard       | https://leetcode.com/problems/word-ladder/                   | Time Limit       |
+| 96             | Unique Binary Search Trees                                 | Medium     | https://leetcode.com/problems/unique-binary-search-trees/    |                  |
+| 121            | Best Time to Buy and Sell Stock                            | Easy       | https://leetcode.com/problems/best-time-to-buy-and-sell-stock/ |                  |
+| 10             | Regular Expression Matching                                | Hard       | https://leetcode.com/problems/regular-expression-matching/   |                  |
+| 739            | Daily Temperatures                                         | Medium     | https://leetcode.com/problems/daily-temperatures/            | Time Limit       |
+| 11             | Container With Most Water                                  | Medium     | https://leetcode.com/problems/container-with-most-water/     | Wrong            |
+| 368            | Largest Divisible Subset                                   | Medium     | https://leetcode.com/problems/largest-divisible-subset/      | Time Limit       |
+| 41             | First Missing Positive                                     | Hard       | https://leetcode.com/problems/first-missing-positive/        | Not O(n)         |
+| 407            | Trapping Rain Water II                                     | Hard       | https://leetcode.com/problems/trapping-rain-water-ii/        | Time Limit       |
+| 84             | Largest Rectangle in Histogram                             | Hard       | https://leetcode.com/problems/largest-rectangle-in-histogram/ | Time Limit       |
+| 106            | Construct Binary Tree from Inorder and Postorder Traversal | Medium     | https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/ | Wrong/Time Limit |
 
 
 
@@ -117,4 +118,22 @@ use stack to store
             stack.append(i)
         return ans
 ```
+
+
+
+
+
+#### 106
+
+Use the characteristic of inorder and postorder traverse
+
+Use recursion to do left and right substree
+
+**sample solution:** 
+
+* 1
+
+**similar problems:**
+
+* 105 https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 
