@@ -32,7 +32,7 @@ class Solution:
             if i + 1 == l or nums[i] != nums[i + 1]:
                 return nums[i]
 
-    # online solutionm, not faster
+    # online solution, not faster
     def singleNonDuplicate(self, nums: List[int]) -> int:
         l = 0
         r = len(nums) - 1

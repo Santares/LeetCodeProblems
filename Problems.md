@@ -14,6 +14,7 @@
 | 407            | Trapping Rain Water II                                     | Hard       | https://leetcode.com/problems/trapping-rain-water-ii/        | Time Limit       |
 | 84             | Largest Rectangle in Histogram                             | Hard       | https://leetcode.com/problems/largest-rectangle-in-histogram/ | Time Limit       |
 | 106            | Construct Binary Tree from Inorder and Postorder Traversal | Medium     | https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/ | Wrong/Time Limit |
+| 1727           | Ways to Split Array Into Three Subarrays                   | Medium     | https://leetcode.com/problems/ways-to-split-array-into-three-subarrays/ | Time Limit       |
 
 
 
@@ -129,6 +130,8 @@ Use the characteristic of inorder and postorder traverse
 
 Use recursion to do left and right substree
 
+
+
 **sample solution:** 
 
 * https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/discuss/1588934/C%2B%2B-EASY-Intuitive-Sol-or-Clean-Recursive-Code-w-Explanation-(Dry-Run)-or-T.C%3AO(N)
@@ -137,4 +140,18 @@ Use recursion to do left and right substree
 
 * 105 https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
   * similar
+
+
+
+
+
+#### 1727
+
+Use **binary search**, **prefix sum array**, **two-pointer**
+
+
+
+**sample solution:** 
+
+* https://leetcode.com/problems/ways-to-split-array-into-three-subarrays/discuss/999157/Python3-binary-search-and-2-pointer
 
