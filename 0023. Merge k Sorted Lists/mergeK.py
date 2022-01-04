@@ -124,3 +124,39 @@ class Solution:
                 heapq.heappush(min_heap, (node.val, list_index))
 
         return head.next
+
+    # online solution
+    def mergeKLists6(self, lists):
+        k = len(lists)
+        q = PriorityQueue(maxsize=k)
+        dummy = ListNode(None)
+        curr = dummy
+        for list_idx, node in enumerate(lists):
+            if node: q.put((node.val, list_idx, node))
+        while q.qsize() > 0:
+            poped = q.get()
+            curr.next, list_idx = poped[2], poped[1]
+            curr = curr.next
+            if curr.next: q.put((curr.next.val, list_idx, curr.next))
+        return dummy.next
+
+
+    def mergeKLists7(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        root = ListNode()
+        current = root
+
+        count = 0
+        queue = []
+        for node in lists:
+            while node:
+                queue.append((node.val, count, node))
+                count += 1
+                node = node.next
+
+        heapq.heapify(queue)
+        while queue:
+            _, _, node = heapq.heappop(queue)
+            current.next = node
+            current = current.next
+
+        return root.next
