@@ -17,6 +17,7 @@
 | 1727           | Ways to Split Array Into Three Subarrays                   | Medium     | https://leetcode.com/problems/ways-to-split-array-into-three-subarrays/ | Time Limit       |
 | 523            | Continuous Subarray Sum                                    | Medium     | https://leetcode.com/problems/continuous-subarray-sum/       | Time Limit       |
 | 221            | Maximal Square                                             | Medium     | https://leetcode.com/problems/maximal-square/                | Time Limit       |
+| 78             | Subsets                                                    | Medium     | https://leetcode.com/problems/subsets/                       | Time Limit       |
 
 
 
@@ -174,3 +175,19 @@ use **Math** trick
 **sample solution:** 
 
 https://leetcode.com/problems/maximal-square/discuss/600149/Python-Thinking-Process-Diagrams-DP-Approach
+
+
+
+
+
+
+
+#### 78
+
+**solutions:**
+
++ backtracking algorithm
++ bianry bit mask
+
+
+
