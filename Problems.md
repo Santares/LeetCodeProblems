@@ -15,6 +15,8 @@
 | 84             | Largest Rectangle in Histogram                             | Hard       | https://leetcode.com/problems/largest-rectangle-in-histogram/ | Time Limit       |
 | 106            | Construct Binary Tree from Inorder and Postorder Traversal | Medium     | https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/ | Wrong/Time Limit |
 | 1727           | Ways to Split Array Into Three Subarrays                   | Medium     | https://leetcode.com/problems/ways-to-split-array-into-three-subarrays/ | Time Limit       |
+| 523            | Continuous Subarray Sum                                    | Medium     | https://leetcode.com/problems/continuous-subarray-sum/       | Time Limit       |
+| 221            | Maximal Square                                             | Medium     | https://leetcode.com/problems/maximal-square/                | Time Limit       |
 
 
 
@@ -155,3 +157,20 @@ Use **binary search**, **prefix sum array**, **two-pointer**
 
 * https://leetcode.com/problems/ways-to-split-array-into-three-subarrays/discuss/999157/Python3-binary-search-and-2-pointer
 
+
+
+#### 523
+
+use **Math** trick
+
+
+
+
+
+#### 221
+
+
+
+**sample solution:** 
+
+https://leetcode.com/problems/maximal-square/discuss/600149/Python-Thinking-Process-Diagrams-DP-Approach
