@@ -18,6 +18,7 @@
 | 523            | Continuous Subarray Sum                                    | Medium     | https://leetcode.com/problems/continuous-subarray-sum/       | Time Limit       |
 | 221            | Maximal Square                                             | Medium     | https://leetcode.com/problems/maximal-square/                | Time Limit       |
 | 78             | Subsets                                                    | Medium     | https://leetcode.com/problems/subsets/                       | Time Limit       |
+| 856            | Score of Parentheses                                       | Medium     | https://leetcode.com/problems/score-of-parentheses/          | Better Solution  |
 
 
 
@@ -191,3 +192,8 @@ https://leetcode.com/problems/maximal-square/discuss/600149/Python-Thinking-Proc
 
 
 
+#### 856
+
+solution:
+
++ https://leetcode.com/problems/score-of-parentheses/discuss/141777/C%2B%2BJavaPython-O(1)-Space
