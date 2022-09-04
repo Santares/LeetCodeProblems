@@ -1,7 +1,7 @@
 # Problems
 
 | Problem Number | Problem Name                                               | Difficulty | Link                                                         | Notes            |
-| -------------- | ---------------------------------------------------------- | ---------- | ------------------------------------------------------------ | ---------------- |
+|----------------|------------------------------------------------------------|------------| ------------------------------------------------------------ |------------------|
 | 5              | Longest Palindromic Substring                              | Medium     | https://leetcode.com/problems/longest-palindromic-substring/ |                  |
 | 127            | Word Ladder                                                | Hard       | https://leetcode.com/problems/word-ladder/                   | Time Limit       |
 | 96             | Unique Binary Search Trees                                 | Medium     | https://leetcode.com/problems/unique-binary-search-trees/    |                  |
@@ -20,6 +20,7 @@
 | 78             | Subsets                                                    | Medium     | https://leetcode.com/problems/subsets/                       | Time Limit       |
 | 856            | Score of Parentheses                                       | Medium     | https://leetcode.com/problems/score-of-parentheses/          | Better Solution  |
 | 322            | Coin Change                                                | Medium     | https://leetcode.com/problems/coin-change/                   | Time Limit       |
+ | 33             | Search in Rotated Sorted Array                             | Medium     |https://leetcode.com/problems/search-in-rotated-sorted-array/   | Better method    |
 
 
 
@@ -210,3 +211,10 @@ dp
 **solution**
 
 + https://leetcode.com/problems/coin-change/discuss/1940490/100-DP-Explanation
+
+### 33
+
+Binary Search
+
+**solution**
+https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/2525807/python-binary-search
