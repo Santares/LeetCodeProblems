@@ -94,6 +94,32 @@ class Solution:
 
         return [start, end]
 
+    # 2023.8.3 Own solution
+    def searchRange4(self, nums: List[int], target: int) -> List[int]:
+        left = 0
+        right = len(nums) - 1
+        res = -1
+        while left <= right:
+            mid = left + (right - left) // 2
+            if nums[mid] == target:
+                res = mid
+                break
+            elif nums[mid] > target:
+                right = mid - 1
+            else:
+                left = mid + 1
+
+        if res == -1:
+            return [-1, -1]
+        else:
+            left = res
+            right = res
+            while left > 0 and nums[left - 1] == target:
+                left -= 1
+            while right < len(nums) - 1 and nums[right + 1] == target:
+                right += 1
+            return [left, right]
+
 
 
 if __name__ == '__main__':
