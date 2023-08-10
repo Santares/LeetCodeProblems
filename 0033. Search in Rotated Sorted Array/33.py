@@ -80,6 +80,36 @@ class Solution:
                     left = mid + 1
         return -1
 
+    # Based on online solution. 2023/08/09
+    def search4(self, nums: List[int], target: int) -> int:
+        left = 0
+        right = len(nums) - 1
+        while left <= right:
+            mid = left + (right - left) // 2
+            if nums[mid] == target:
+                return mid
+
+            # left is sorted
+            # Note!!! Must be >=
+            if nums[mid] >= nums[left]:
+                if nums[left] <= target < nums[mid]:
+                    right = mid - 1
+                else:
+                    left = mid + 1
+
+            # Alternatively, make this a single case
+            # elif nums[mid] == nums[left]:
+            #     left = mid + 1
+
+            # right is sorted
+            else:
+                if nums[right] >= target > nums[mid]:
+                    left = mid + 1
+                else:
+                    right = mid - 1
+
+        return -1
+
 if __name__ == '__main__':
     s = Solution()
     test = [1,3]
