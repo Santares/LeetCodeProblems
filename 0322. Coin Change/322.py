@@ -41,8 +41,51 @@ class Solution:
         else:
             return dp[-1]
 
+    # 20230810:
+    def coinChange3(self, coins: List[int], amount: int) -> int:
+        mem = {0: 0}
+        coins.sort(reverse=True)
+
+        def helper(x):
+            if x in mem:
+                return mem[x]
+
+            res = -1
+            for i in coins:
+                if i <= x:
+                    newRes = helper(x - i)
+                    if newRes == -1:
+                        continue
+                    elif res == -1:
+                        res = newRes + 1
+                    else:
+                        res = min(newRes + 1, res)
+
+            mem[x] = res
+            return res
+
+        return helper(amount)
+
+    # Improved version of solution3, less space
+    def coinChange4(self, coins: List[int], amount: int) -> int:
+        mem = [-1] * (amount + 1)
+        mem[0] = 0
+
+        for i in range(1, amount + 1):
+            for x in coins:
+                if x <= i:
+                    if mem[i - x] != -1:
+                        if mem[i] == -1:
+                            mem[i] = mem[i - x] + 1
+                        else:
+                            mem[i] = min(mem[i], mem[i - x] + 1)
+
+        return mem[amount]
+
 if __name__ == '__main__':
     solution = Solution()
-    test1 =[3,7,405,436]
-    test2 = 8839
+    # test1 =[3,7,405,436]
+    # test2 = 8839
+    test1 = [1,2,5]
+    test2 = 11
     print(solution.coinChange(test1, test2))

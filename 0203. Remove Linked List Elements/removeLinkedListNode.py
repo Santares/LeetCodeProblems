@@ -33,3 +33,15 @@ class Solution:
         last.next = None
 
         return dummy.next
+
+    # 2023/08/10
+    def removeElements3(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+        fakeHead = ListNode(0, head)
+        current = fakeHead
+        while current.next:
+            if current.next.val == val:
+                current.next = current.next.next
+            else:
+                current = current.next
+
+        return fakeHead.next
