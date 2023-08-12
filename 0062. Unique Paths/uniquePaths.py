@@ -39,5 +39,17 @@ class Solution:
                 dp[j] += dp[j - 1]
         return dp[n - 1]
 
+    # 2023/08/11
+    def uniquePaths6(self, m: int, n: int) -> int:
+        dp = [[0] * n for _ in range(m)]
+        dp[0][0] = 1
+        for i in range(m):
+            for j in range(n):
+                if i > 0:
+                    dp[i][j] += dp[i - 1][j]
+                if j > 0:
+                    dp[i][j] += dp[i][j - 1]
+        return dp[-1][-1]
+
 
 
