@@ -1,3 +1,6 @@
+from collections import deque
+
+
 class Solution:
     def isValid(self, s: str) -> bool:
         buf = []
@@ -30,6 +33,18 @@ class Solution:
             else:
                 stack.append(c)
         return not stack
+
+    # 2023/08/17
+    def isValid3(self, s: str) -> bool:
+        queue = deque()
+        dic = {'(': ')', '{': '}', '[': ']'}
+        for c in s:
+            if c in dic:
+                queue.append(c)
+            else:
+                if not queue or dic[queue.pop()] != c:
+                    return False
+        return not queue
 
 
 if __name__ == '__main__':

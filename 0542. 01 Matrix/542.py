@@ -43,19 +43,23 @@ class Solution:
         directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
 
         res = [[neg] * n for _ in range(m)]
+        # visited = set()
 
         for i in range(m):
             for j in range(n):
                 if mat[i][j] == 0:
                     res[i][j] = 0
                     queue.append((i, j))
+                    # visited.add((i, j))
 
         while queue:
             x, y = queue.popleft()
             for dx, dy in directions:
+                # if 0 <= x + dx < m and 0 <= y + dy < n and (x + dx, y + dy) not in visited:
                 if 0 <= x + dx < m and 0 <= y + dy < n and res[x + dx][y + dy] > 1 + res[x][y]:
                     res[x + dx][y + dy] = 1 + res[x][y]
                     queue.append((x + dx, y + dy))
+                    # visited.add((x + dx, y + dy))
 
         return res
 
