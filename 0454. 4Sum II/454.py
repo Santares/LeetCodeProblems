@@ -39,3 +39,17 @@ class Solution:
                 res += d12[x] * d34[0 - x]
 
         return res
+
+    def fourSumCount2(self, nums1: List[int], nums2: List[int], nums3: List[int], nums4: List[int]) -> int:
+        res = 0
+
+        A = defaultdict(int)
+        for x in nums1:
+            for y in nums2:
+                A[x + y] += 1
+
+        for x in nums3:
+            for y in nums4:
+                res += A[0 - x - y]
+
+        return res

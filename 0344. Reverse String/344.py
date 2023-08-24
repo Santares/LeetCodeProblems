@@ -24,15 +24,24 @@ class Solution:
         right = s[mid:]
         return self.reverseStringE(right) + self.reverseStringE(left)
 
+    # 2023/08/23
+    def reverseString(self, s: List[str]) -> None:
+        l, r = 0, len(s) - 1
+
+        while l < r:
+            s[l], s[r] = s[r], s[l]
+            l += 1
+            r -= 1
+
 
 if __name__ == '__main__':
     solution = Solution()
 
     test1 = ["h", "e", "l", "l", "o"]
     test2 = ["H", "a", "n", "n", "a", "h"]
-    test3 = ["A", " ", "m", "a", "n", ",", " ", "a", " ", "p", "l", "a", "n", ",", " ", "a", " ", "c", "a", "n", "a", "l", ":",
-     " ", "P", "a", "n", "a", "m", "a"]
+    test3 = ["A", " ", "m", "a", "n", ",", " ", "a", " ", "p", "l", "a", "n", ",", " ", "a", " ", "c", "a", "n", "a",
+             "l", ":",
+             " ", "P", "a", "n", "a", "m", "a"]
     # print(solution.reverseString2(test1))
-
 
     print(solution.reverseStringE("12345"))
