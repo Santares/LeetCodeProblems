@@ -32,6 +32,21 @@ class Solution:
                 result[stack.pop()] = x
         return result
 
+    # 2023/08/24
+    def nextGreaterElements3(self, nums: List[int]) -> List[int]:
+        l = len(nums)
+        res = [-1] * (l * 2)
+        queue = deque()
+
+        nums = nums + nums
+        for i, x in enumerate(nums):
+            while queue and nums[queue[-1]] < x:
+                res[queue[-1]] = x
+                queue.pop()
+            queue.append(i)
+
+        return res[:l]
+
 if __name__ == '__main__':
     solution = Solution()
     test = [1,2,1]
