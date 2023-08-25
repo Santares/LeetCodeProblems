@@ -105,13 +105,59 @@ class Solution:
             stack.append(i)
         return ans
 
+    # 2023/08/24 monotonic stack
+    def largestRectangleArea6(self, heights: List[int]) -> int:
+        right = [0] * len(heights)
+        left = [0] * len(heights)
+        stack = []
+        for i in range(len(heights)):
+            while stack and heights[stack[-1]] > heights[i]:
+                right[stack.pop()] = i
+            stack.append(i)
+
+        while stack:
+            right[stack.pop()] = len(heights)
+
+        for i in range(len(heights) - 1, -1, -1):
+            while stack and heights[stack[-1]] > heights[i]:
+                left[stack.pop()] = i
+            stack.append(i)
+
+        while stack:
+            left[stack.pop()] = -1
+
+        res = 0
+
+        for i, x in enumerate(heights):
+            lb = left[i] + 1
+            rb = right[i] - 1
+            res = max((rb - lb + 1) * x, res)
+
+        return res
+
+    # My version of solution 5. Monotonic stack
+    def largestRectangleArea7(self, heights: List[int]) -> int:
+        heights = [0] + heights + [0]
+        stack = []
+
+        res = 0
+        for i, x in enumerate(heights):
+            while stack and heights[stack[-1]] > x:
+                h = stack.pop()
+                left = stack[-1]
+                res = max(res, (i - left - 1) * heights[h])
+
+            stack.append(i)
+
+        return res
+
 
 if __name__ == '__main__':
     solution = Solution()
     test = [2,1,5,6,2,3]
-    test = [2,4]
+    # test = [2,4]
 
-    print(solution.largestRectangleArea4(test))
+    print(solution.largestRectangleArea6(test))
 
 
 
