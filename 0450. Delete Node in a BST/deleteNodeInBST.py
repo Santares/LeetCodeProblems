@@ -87,3 +87,90 @@ class Solution:
         while root.left:
             root = root.left
         return root
+
+    def deleteNode3(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
+        superRoot = TreeNode(0)
+        superRoot.left = root
+        parent = superRoot
+
+        def helper(root, key, parent, isLeft):
+            if root is None:
+                return
+
+            if root.val == key:
+                if not root.left and not root.right:
+                    if isLeft:
+                        parent.left = None
+                    else:
+                        parent.right = None
+                elif root.left:
+                    if isLeft:
+                        parent.left = root.left
+                    else:
+                        parent.right = root.left
+                    rotate(root.left, root.right)
+                else:
+                    if isLeft:
+                        parent.left = root.right
+                    else:
+                        parent.right = root.right
+                    rotate(root.right, root.left)
+
+            elif root.val > key:
+                helper(root.left, key, root, True)
+            else:
+                helper(root.right, key, root, False)
+
+            return root
+
+        def rotate(root, subTree):
+            if not subTree:
+                return
+            if root.val < subTree.val:
+                if root.right:
+                    rotate(root.right, subTree)
+                else:
+                    root.right = subTree
+            else:
+                if root.left:
+                    rotate(root.left, subTree)
+                else:
+                    root.left = subTree
+
+        helper(root, key, parent, True)
+        return superRoot.left
+
+    # Based on online solution, improved version of solution 3
+    def deleteNode4(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
+        def insert(root, subTree):
+            if not subTree:
+                return
+            while root.right:
+                root = root.right
+            root.right = subTree
+
+        if root is None:
+            return
+
+        if root.val == key:
+            if not root.left and not root.right:
+                return None
+            elif root.left:
+                insert(root.left, root.right)
+                return root.left
+            else:
+                return root.right
+
+        elif root.val > key:
+            root.left = self.deleteNode(root.left, key)
+        else:
+            root.right = self.deleteNode(root.right, key)
+
+        return root
+
+
+if __name__ == '__main__':
+    s = Solution()
+    test = TreeNode(5, TreeNode(3, TreeNode(2), TreeNode(4)), TreeNode(6, None, TreeNode(7)))
+    key = 3
+    print(s.deleteNode3(test, key))

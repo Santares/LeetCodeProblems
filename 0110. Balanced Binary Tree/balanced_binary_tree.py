@@ -1,11 +1,14 @@
 from typing import List
 from typing import Optional
 
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
+
 class Solution:
     def calHeight(self, root: Optional[TreeNode]) -> int:
         if root is None:
@@ -54,3 +57,23 @@ class Solution:
             return -1
 
         return max(lh, rh) + 1
+
+    # 2023/08/28
+    def isBalanced3(self, root: Optional[TreeNode]) -> bool:
+        if not root:
+            return True
+
+        self.res = True
+
+        def helper(root):
+            if not root:
+                return 0
+            else:
+                left = helper(root.left)
+                right = helper(root.right)
+                if abs(left - right) > 1:
+                    self.res = False
+                return max(left, right) + 1
+
+        helper(root)
+        return self.res
