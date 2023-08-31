@@ -59,3 +59,16 @@ class Solution:
             maxSum = max(sums, maxSum)
 
         return maxSum
+
+    # 2023/08/30
+    def maxSubArray4(self, nums: List[int]) -> int:
+        res = float("-inf")
+        total = 0
+        for x in nums:
+            total += x
+            if total > res:
+                res = total
+            if total <= 0:
+                total = 0
+
+        return res

@@ -39,7 +39,7 @@ class Solution:
         return profit
 
     # very fast
-    def maxProfit(self, prices: List[int]) -> int:
+    def maxProfit4(self, prices: List[int]) -> int:
         profit = 0
 
         minPrice = prices[0]
@@ -54,6 +54,28 @@ class Solution:
                 sell = x
 
         return profit
+
+    # 2023/08/30
+    def maxProfit5(self, prices: List[int]) -> int:
+        buy = prices[0]
+        res = 0
+        for x in prices[1:]:
+            if x < buy:
+                buy = x
+            else:
+                res = max(res, x - buy)
+
+        return res
+
+    # 2023/08/30
+    def maxProfit6(self, prices: List[int]) -> int:
+        dp = [x for x in prices]
+
+        res = 0
+        for i in range(1, len(prices)):
+            dp[i] = min(dp[i - 1], prices[i])
+            res = max(res, prices[i] - dp[i])
+        return res
 
 
 if __name__ == '__main__':
