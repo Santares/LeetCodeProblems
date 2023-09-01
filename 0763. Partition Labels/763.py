@@ -48,3 +48,33 @@ class Solution:
                 start = flag + 1
 
         return res
+
+    # 2023/08/31
+    def partitionLabels3(self, s: str) -> List[int]:
+        dic = {}
+        for i, x in enumerate(s):
+            dic[x] = i
+
+        res = []
+
+        def helper(i):
+            if i >= len(s):
+                return 0
+            end = dic[s[i]]
+            j = i + 1
+            while j < end:
+                c = s[j]
+                if dic[c] > end:
+                    end = dic[c]
+                j += 1
+
+            return end - i + 1
+
+        i = 0
+        while i < len(s):
+            r = helper(i)
+            if r != 0:
+                res.append(r)
+                i += r
+
+        return res
