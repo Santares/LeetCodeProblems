@@ -51,3 +51,23 @@ class Solution:
             output.append([nums[j] for j in range(n) if bitmask[j] == '1'])
 
         return output
+
+    # 2023/09/01, back tracing
+    def subsets5(self, nums: List[int]) -> List[List[int]]:
+        res = []
+        n = len(nums)
+
+        def helper(i, cur):
+            if i >= n:
+                res.append(list(cur))
+                return
+
+            for j in range(i, n):
+                cur.append(nums[j])
+                helper(j + 1, cur)
+                cur.pop()
+            res.append(list(cur))
+
+        helper(0, [])
+
+        return res

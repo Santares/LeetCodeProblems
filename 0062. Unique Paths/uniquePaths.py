@@ -51,5 +51,14 @@ class Solution:
                     dp[i][j] += dp[i][j - 1]
         return dp[-1][-1]
 
+    # 2023/09/01
+    def uniquePaths7(self, m: int, n: int) -> int:
+        dp = [0] * n
+        dp[0] = 1
+        for _ in range(m):
+            for j in range(1, n):
+                dp[j] += dp[j - 1]
+
+        return dp[-1]
 
 
