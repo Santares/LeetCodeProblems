@@ -82,6 +82,21 @@ class Solution:
 
         return mem[amount]
 
+    # 2023/09/05
+    def coinChange4(self, coins: List[int], amount: int) -> int:
+        dp = [float('inf')] * (amount + 1)
+        dp[0] = 0
+        for x in range(1, amount + 1):
+            for y in coins:
+                if x >= y:
+                    dp[x] = min(dp[x], dp[x - y] + 1)
+
+        if dp[-1] == float('inf'):
+            return -1
+        else:
+            return dp[-1]
+
+
 if __name__ == '__main__':
     solution = Solution()
     # test1 =[3,7,405,436]
