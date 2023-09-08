@@ -30,7 +30,7 @@ class Solution:
         helper(0, 0, [])
         return res
 
-    def partition(self, s: str) -> List[List[str]]:
+    def partition2(self, s: str) -> List[List[str]]:
         res = []
         n = len(s)
         dp = [[0] * n for _ in range(n)]

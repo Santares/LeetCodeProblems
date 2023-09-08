@@ -4,7 +4,7 @@ class Solution:
         len1 = len(s1)
         len2 = len(s2)
         len3 = len(s3)
-        if (len1 + len2 != len3):
+        if len1 + len2 != len3:
             return False
         dp = [[False] * (len2 + 1) for i in range(len1 + 1)]
         dp[0][0] = True
