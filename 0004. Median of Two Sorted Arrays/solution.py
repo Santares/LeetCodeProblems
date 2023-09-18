@@ -91,6 +91,32 @@ class Solution:
             i = int(l / 2) - 1
             return (completed_array[i] + completed_array[i + 1]) / 2
 
+    # Based on online solution. O(log(m+n))
+    def findMedianSortedArrays4(self, nums1: List[int], nums2: List[int]) -> float:
+        def helper(nums1, nums2, k):
+            if len(nums1) == 0:
+                return nums2[k]
+            if len(nums2) == 0:
+                return nums1[k]
+
+            if k == 0:
+                return min(nums1[0], nums2[0])
+
+            n = max(min(len(nums1), len(nums2), k // 2), 1)
+            if nums1[n - 1] >= nums2[n - 1]:
+                nums2 = nums2[n:]
+            else:
+                nums1 = nums1[n:]
+
+            return helper(nums1, nums2, k - n)
+
+        l = len(nums1) + len(nums2)
+        if l % 2 == 1:
+            return helper(nums1, nums2, l // 2)
+        else:
+            return (helper(nums1.copy(), nums2.copy(), l // 2) + helper(nums1.copy(), nums2.copy(), l // 2 - 1)) / 2
+
+
 if __name__ == '__main__':
     test1 = [1, 3]
     test2 = [2]

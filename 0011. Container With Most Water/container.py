@@ -104,6 +104,19 @@ class Solution:
                 res = max(res, (right - left) * min(height[left], height[right]))
         return res
 
+    # 2023/09/17
+    def maxArea5(self, height: List[int]) -> int:
+        res = 0
+        left = 0
+        right = len(height) - 1
+        while left < right:
+            res = max(res, min(height[left], height[right]) * (right - left))
+            if height[left] <= height[right]:
+                left += 1
+            else:
+                right -= 1
+        return res
+
 if __name__ == '__main__':
     solution = Solution()
     test = [1, 8, 6, 2, 5, 4, 8, 3, 7]
