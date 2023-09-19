@@ -103,3 +103,37 @@ class Solution:
                 res += "IX"
 
         return res
+
+    # 2023/09/18
+    def intToRoman3(self, num: int) -> str:
+        symbols = {
+            1: 'I',
+            5: 'V',
+            10: 'X',
+            50: 'L',
+            100: 'C',
+            500: 'D',
+            1000: 'M'
+        }
+
+        t = 0
+        res = ""
+        while num != 0:
+            d = num % 10
+            cur = ""
+            if d * (10 ** t) in symbols:
+                cur = symbols[d * (10 ** t)]
+            elif d < 4:
+                cur = d * symbols[(10 ** t)]
+            elif d == 4:
+                cur = symbols[(10 ** t)] + symbols[5 * (10 ** t)]
+            elif d < 9:
+                cur = symbols[5 * (10 ** t)] + (d - 5) * symbols[(10 ** t)]
+            else:  # d == 9
+                cur = symbols[10 ** t] + symbols[10 ** (t + 1)]
+
+            res = cur + res
+            num = num // 10
+            t += 1
+
+        return res

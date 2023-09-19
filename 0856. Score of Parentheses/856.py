@@ -31,6 +31,17 @@ class Solution:
                 cur += stack.pop() + max(cur, 1)
         return cur
 
+    # Another version of solution 2
+    def scoreOfParentheses2_2(self, s: str) -> int:
+        stk = [0]
+        for c in s:
+            if c == '(':
+                stk.append(0)
+            else:
+                cur = stk.pop()
+                stk.append(stk.pop() + max(cur * 2, 1))
+        return stk[-1]
+
     # 2023/09/05
     def scoreOfParentheses3(self, s: str) -> int:
         res = 0

@@ -68,9 +68,41 @@ class Solution:
 
         return helper(1, s)
 
+    # 2023/09/18
+    def decodeString3(self, s: str) -> str:
+        def helper(i):
+            res = ""
+            m = 0
+
+            while i < len(s):
+                c = s[i]
+                if c in "0123456789":
+                    if m != 0:
+                        m = m * 10 + int(c)
+                    else:
+                        m = int(c)
+                elif c == '[':
+                    i, cur = helper(i + 1)
+                    res += m * cur
+                    m = 0
+                elif c == ']':
+                    return i, res
+
+                else:
+                    res += c
+
+                i += 1
+
+            # return i, res
+
+        s += ']'
+        _, res = helper(0)
+
+        return res
+
 
 if __name__ == '__main__':
     soultion = Solution()
     test = "3[a]2[bc]"
     # test = "100[leetcode]"
-    print(soultion.decodeString(test))
+    print(soultion.decodeString3(test))
