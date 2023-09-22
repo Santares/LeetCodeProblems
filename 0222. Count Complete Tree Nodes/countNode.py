@@ -24,7 +24,7 @@ class Solution:
 
         left, right = root.left, root.right
         level = 1
-        if left and right:
+        while left and right:
             level += 1
             left = left.left
             right = right.right

@@ -37,12 +37,29 @@ class Solution:
         for i in range(n):
             dp[i][i] = True
 
+        # def isPalindrome(l, r):
+        #     if dp[l][r] != 0:
+        #         return dp[l][r]
+        #     i, j = l, r
+        #     while i <= j:
+        #         if s[i] != s[j]:
+        #             dp[l][r] = False
+        #             return False
+        #         else:
+        #             i += 1
+        #             j -= 1
+        #     dp[l][r] = True
+        #     return True
+        #     cur = s[l:r+1]
+        #     return cur == cur[::-1]
+
         def helper(i, start, cur):
             if start >= n:
                 res.append(list(cur))
                 return
 
             for j in range(i, n):
+                # if isPalindrome(start, j):
                 word = s[start:j + 1]
                 if word == word[::-1]:
                     cur.append(word)

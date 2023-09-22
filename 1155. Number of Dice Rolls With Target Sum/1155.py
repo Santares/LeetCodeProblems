@@ -1,3 +1,6 @@
+from functools import cache
+
+
 class Solution:
     def numRollsToTarget(self, n: int, k: int, target: int) -> int:
         mod = 10 ** 9 + 7
