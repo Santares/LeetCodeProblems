@@ -58,9 +58,33 @@ class Solution:
 
         return res
 
+    # Based on online solution
+    def longestPalindrome3(self, s: str) -> str:
+        def helper(l,r):
+            while l-1 >= 0 and r+1 <n:
+                if s[l-1] != s[r+1]:
+                    return l, r
+                l -=1
+                r += 1
+            return l, r
+
+        res = s[0]
+        n = len(s)
+        for i in range(n-1):
+            l, r = helper(i, i)
+            if r-l+1 > len(res):
+                res = s[l:r+1]
+            if s[i] == s[i+1]:
+                l, r = helper(i, i+1)
+                if r-l+1 > len(res):
+                    res = s[l:r+1]
+
+        return res
+
 if __name__ == '__main__':
     s = Solution()
     test = "babad"
     test = "cbbd"
     # test = "ccc"
-    print(s.longestPalindrome(test))
+    test = "adam"
+    print(s.longestPalindrome3(test))
