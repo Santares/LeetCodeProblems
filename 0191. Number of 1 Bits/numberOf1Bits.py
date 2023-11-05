@@ -18,3 +18,11 @@ class Solution:
             count += 1
             n &= n - 1
         return count
+
+    # 20231103
+    def hammingWeight4(self, n: int) -> int:
+        res = 0
+        while n:
+            res += n % 2
+            n = n // 2
+        return res

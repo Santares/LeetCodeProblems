@@ -83,6 +83,21 @@ class Solution:
 
         return stack[-1]
 
+    # 20231104
+    def scoreOfParentheses5(self, s: str) -> int:
+        stack = []
+        for i in range(len(s)):
+            c = s[i]
+            if c == '(':
+                stack.append(0)
+            else:
+                score = max(stack.pop() * 2, 1)
+                if stack:
+                    score += stack.pop()
+                stack.append(score)
+
+        return stack[0]
+
 
 if __name__ == '__main__':
     solution = Solution()

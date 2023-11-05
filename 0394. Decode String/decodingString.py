@@ -100,9 +100,39 @@ class Solution:
 
         return res
 
+    # 20231104
+    def decodeString4(self, s: str) -> str:
+        stack = []
+        i = 0
+        m = 0
+        cur = ''
+        while i < len(s):
+            c = s[i]
+            if c in '0123456789':
+                if cur != '':
+                    stack.append(cur)
+                    cur = ''
+                m = m * 10 + int(c)
+            elif c == '[':
+                stack.append(m)
+                m = 0
+            elif c == ']':
+                cur = stack.pop() * cur
+                if stack and type(stack[-1]) is not int:
+                    cur = stack.pop() + cur
+            else:
+                cur += c
+            i += 1
+
+        if cur != '':
+            stack.append(cur)
+
+        return ''.join(stack)
+
 
 if __name__ == '__main__':
     soultion = Solution()
     test = "3[a]2[bc]"
+    test = "3[a2[c]]"
     # test = "100[leetcode]"
-    print(soultion.decodeString3(test))
+    print(soultion.decodeString4(test))
