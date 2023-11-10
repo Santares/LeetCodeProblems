@@ -39,3 +39,13 @@ class Solution:
                 left += 1
             right += 1
         return left
+
+    def removeDuplicates3_2(self, nums: List[int]) -> int:
+        left = 1
+
+        for right in range(1, len(nums)):
+            if nums[right] != nums[right - 1]:
+                nums[left] = nums[right]
+                left += 1
+
+        return left

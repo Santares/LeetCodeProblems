@@ -33,9 +33,9 @@ class Solution:
     def partition2(self, s: str) -> List[List[str]]:
         res = []
         n = len(s)
-        dp = [[0] * n for _ in range(n)]
-        for i in range(n):
-            dp[i][i] = True
+        # dp = [[0] * n for _ in range(n)]
+        # for i in range(n):
+        #     dp[i][i] = True
 
         # def isPalindrome(l, r):
         #     if dp[l][r] != 0:

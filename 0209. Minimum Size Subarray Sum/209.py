@@ -1,3 +1,4 @@
+from bisect import bisect_left
 from typing import List
 
 
@@ -63,6 +64,39 @@ class Solution:
                 res = min(res, j - index)
 
         return res if res != float('inf') else 0
+
+    # 20231106 binary search
+    def minSubArrayLen4(self, target: int, nums: List[int]) -> int:
+        sums = [0]
+        for x in nums:
+            sums.append(sums[-1] + x)
+
+        if target > sums[-1]:
+            return 0
+
+        res = float('inf')
+        for i in range(len(sums) - 1):
+            index = bisect_left(sums, target + sums[i])
+            if index < len(sums):
+                res = min(res, index - i)
+        return res
+
+    # sliding window (two pointers)
+    def minSubArrayLen5(self, target: int, nums: List[int]) -> int:
+        if target > sum(nums):
+            return 0
+        left = 0
+        n = len(nums)
+        cur = 0
+        res = n + 1
+        for right in range(n):
+            cur += nums[right]
+            while cur >= target:
+                res = min(res, right - left + 1)
+                cur -= nums[left]
+                left += 1
+
+        return res
 
 
 if __name__ == '__main__':

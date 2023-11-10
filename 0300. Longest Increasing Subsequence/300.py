@@ -1,3 +1,4 @@
+from bisect import bisect_left
 from typing import List
 
 
@@ -39,6 +40,18 @@ class Solution:
                 res[index] = x
 
         return rLen
+
+    # Simplified version of solution 2
+    def lengthOfLIS3(self, nums: List[int]) -> int:
+        arr = []
+        for x in nums:
+            if not arr or arr[-1] < x:
+                arr.append(x)
+            else:
+                index = bisect_left(arr, x)
+                arr[index] = x
+
+        return len(arr)
 
 
 if __name__ == '__main__':

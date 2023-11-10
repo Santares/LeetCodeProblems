@@ -45,6 +45,21 @@ class Solution:
 
             return True
 
+        def bfs2(node, flag):
+            queue = deque([node])
+            while queue:
+                for _ in range(len(queue)):
+                    node = queue.popleft()
+                    color[node] = flag
+                    for nxt in graph[node]:
+                        if color[nxt] == 0:
+                            queue.append(nxt)
+                        elif color[nxt] == flag:
+                            return False
+                flag *= -1
+
+            return True
+
         for node in range(len(graph)):
             if color[node] == 0:
                 res = bfs(node, 1)
