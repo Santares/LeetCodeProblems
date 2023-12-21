@@ -36,6 +36,30 @@ class Solution:
                 return ans if -2**31<=ans<=2**31-1 else -1
         return -1
 
+    # 2023/12/13 reuse solution from Problem 31. similar to solution 1
+    def nextGreaterElement3(self, n: int) -> int:
+        nums = list(str(n))
+        i = len(nums) - 2
+        while i >= 0 and nums[i] >= nums[i + 1]:
+            i -= 1
+
+        if i >= 0:
+            j = len(nums) - 1
+            while j > i and nums[j] <= nums[i]:
+                j -= 1
+            nums[i], nums[j] = nums[j], nums[i]
+
+            l = i + 1
+            r = len(nums) - 1
+            while l < r:
+                nums[l], nums[r] = nums[r], nums[l]
+                l += 1
+                r -= 1
+            res = int(''.join(nums))
+            return -1 if res > 2 ** 31 - 1 else res
+
+        return -1
+
 if __name__ == '__main__':
     solution = Solution()
     # test = 2147483476
