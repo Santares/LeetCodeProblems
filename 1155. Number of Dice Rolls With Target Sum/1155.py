@@ -79,3 +79,11 @@ class Solution:
                         dp[j] += dp[j - x]
 
         return dp[target] % mod
+
+
+if __name__ == '__main__':
+    s = Solution()
+    test1 = 3
+    test2 = 6
+    test3 = 3
+    print(s.numRollsToTarget(test1, test2, test3))
